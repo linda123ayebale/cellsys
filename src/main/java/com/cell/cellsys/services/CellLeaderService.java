@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface CellLeaderService{
     //Save
-    CellLeader saveInstance(CellLeader instance);
+    CellLeader saveCellLeader(CellLeader cellLeader);
     //LIST
-    List<CellLeader> listallInstances();
+    List<CellLeader> listallCellleaders();
     //REMOVE
-    String removeInstance(Long Id);
+    String removeCellLeader(Long Id);
     //UPDATE
-    CellLeader updateInstance(CellLeader instance);
+    CellLeader updateCellleader(CellLeader cellLeader);
     //GETBYID
 }
