@@ -10,7 +10,7 @@ public interface CellLeaderService{
     //LIST
     List<CellLeader> listallInstances();
     //REMOVE
-    String removeInstance(Long Id);
+    void removeInstance(CellLeader instance);
     //UPDATE
     CellLeader updateInstance(CellLeader instance);
     //GETBYID
