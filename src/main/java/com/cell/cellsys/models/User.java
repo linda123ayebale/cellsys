@@ -11,10 +11,8 @@ import java.util.Set;
 
 
 @Entity
-
 @NoArgsConstructor
 @Data
-
 public class User extends BaseEntity {
 
     @Id
@@ -29,21 +27,13 @@ public class User extends BaseEntity {
     private String password;
     private String location;
 
-@ManyToMany(
-        fetch = FetchType.EAGER
-)
-@JoinTable(name ="user_roles",
-joinColumns = {@JoinColumn(name="user_id")},
-inverseJoinColumns = {@JoinColumn(name ="role_id")})
+    @ManyToMany(
+            fetch = FetchType.EAGER
+    )
+    @JoinTable(name = "user_roles",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Roles> roles;
-
-
-
-
-
-
-
-
 
 
 }
