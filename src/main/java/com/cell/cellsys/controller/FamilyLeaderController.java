@@ -1,8 +1,6 @@
 package com.cell.cellsys.controller;
 
-import com.cell.cellsys.models.usermodels.CellLeader;
 import com.cell.cellsys.models.usermodels.FamilyLeader;
-import com.cell.cellsys.services.CellLeaderService;
 import com.cell.cellsys.services.FamilyLeaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

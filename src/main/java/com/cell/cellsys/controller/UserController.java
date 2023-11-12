@@ -1,8 +1,6 @@
 package com.cell.cellsys.controller;
 
 import com.cell.cellsys.models.User;
-import com.cell.cellsys.models.usermodels.Pastor;
-import com.cell.cellsys.services.PastorService;
 import com.cell.cellsys.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

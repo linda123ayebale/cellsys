@@ -44,8 +44,7 @@ public class PastorImpl implements PastorService {
 
     @Override
     public Pastor getInstanceById(Long Id) {
-
-        return null;
+        return pastorRepository.findById(Id).orElseThrow(() -> new RuntimeException("No pastor with that ID"));
     }
 }
 
