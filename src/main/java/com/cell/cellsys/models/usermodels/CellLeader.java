@@ -7,10 +7,9 @@ import lombok.Data;
 
 @Entity
 @Data
-
 public class CellLeader extends BaseEntity {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 

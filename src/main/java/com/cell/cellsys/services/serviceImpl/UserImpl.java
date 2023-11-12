@@ -1,11 +1,16 @@
 package com.cell.cellsys.services.serviceImpl;
 
 import com.cell.cellsys.models.User;
+
 import com.cell.cellsys.models.usermodels.CellLeader;
 import com.cell.cellsys.repositories.UserRepository;
 import com.cell.cellsys.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+
+import com.cell.cellsys.repositories.UserRepository;
+import com.cell.cellsys.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,33 +21,29 @@ public class UserImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-
-
     @Override
-    public User saveUser(User user) {
-        return userRepository.save(user) ;
+    public User saveInstance(User instance) {
+        return userRepository.save(instance);
     }
 
     @Override
-    public List<User> listallUsers() {
-        return userRepository.findAll(Sort.by(Sort.Direction.ASC));
+    public List<User> listallInstances() {
+        return userRepository.findAll();
     }
 
     @Override
-    public String removeUser(Long Id) {
-        var check = userRepository.findById(Id);
-        if(check.isPresent()) {
-            userRepository.deleteById(Id);
-        }else{
-            return "Cell leader doesnot exist";
-        }
-        return"Cellleader deleted successfully";
+    public void removeInstance(User instance) {
+        userRepository.delete(instance);
     }
 
-
+    @Override
+    public User updateInstance(User instance) {
+        return userRepository.saveAndFlush(instance);
+    }
 
     @Override
-    public User updateUser(User user) {
+    public User getInstanceById(Long Id) {
+
         return null;
     }
 }

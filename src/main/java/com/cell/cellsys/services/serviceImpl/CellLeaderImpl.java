@@ -17,30 +17,23 @@ public class CellLeaderImpl implements CellLeaderService {
     CellleaderRepository cellleaderRepository;
 
 
-    @Override
-    public CellLeader saveCellLeader(CellLeader cellLeader) {
-
-        return cellleaderRepository.save(cellLeader) ;
+@Override
+    public CellLeader saveInstance(CellLeader instance) {
+        return cellleaderRepository.save(instance);
     }
 
     @Override
-    public List<CellLeader> listallCellleaders() {
-        return cellleaderRepository.findAll(Sort.by(Sort.Direction.ASC));
+    public List<CellLeader> listallInstances() {
+        return cellleaderRepository.findAll();
     }
 
     @Override
-    public String removeCellLeader(Long Id) {
-        var check = cellleaderRepository.findById(Id);
-        if(check.isPresent()) {
-            cellleaderRepository.deleteById(Id);
-        }else{
-            return "Cell leader doesnot exist";
-        }
-        return"Cellleader deleted successfully";
+    public void removeInstance(CellLeader instance) {
+        cellleaderRepository.delete(instance);
     }
 
     @Override
-    public CellLeader updateCellleader(CellLeader cellLeader) {
-        return null;
+    public CellLeader updateInstance(CellLeader instance) {
+        return cellleaderRepository.saveAndFlush(instance);
     }
 }

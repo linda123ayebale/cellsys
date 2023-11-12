@@ -1,4 +1,4 @@
-package com.cell.cellsys.contollers;
+package com.cell.cellsys.controller;
 
 import com.cell.cellsys.models.usermodels.CellLeader;
 import com.cell.cellsys.services.CellLeaderService;
@@ -17,17 +17,17 @@ public class CellLeaderController {
 
     @PostMapping("/saveCell-leaders")
     public ResponseEntity<CellLeader> save(@RequestBody CellLeader cellLeader){
-        return ResponseEntity.ok(cellLeaderService.saveCellLeader(cellLeader));
+        return ResponseEntity.ok(cellLeaderService.saveInstance(cellLeader));
     }
 
     @GetMapping("/Listofcell-Leaders")
     public ResponseEntity<List<CellLeader>> listall(){
-        return ResponseEntity.ok(cellLeaderService.listallCellleaders());
+        return ResponseEntity.ok(cellLeaderService.listallInstances());
     }
 
     @DeleteMapping("/cell-leader/{Id}")
     public ResponseEntity<String> remove(@PathVariable Long Id){
-        ResponseEntity.ok(cellLeaderService.removeCellLeader(Id) );
+        cellLeaderService.removeInstance(null);
         return ResponseEntity.ok("Cell leader has been removed successfully");
     }
 }

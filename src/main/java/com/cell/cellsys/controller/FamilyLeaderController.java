@@ -1,4 +1,4 @@
-package com.cell.cellsys.contollers;
+package com.cell.cellsys.controller;
 
 import com.cell.cellsys.models.usermodels.CellLeader;
 import com.cell.cellsys.models.usermodels.FamilyLeader;
@@ -19,17 +19,17 @@ public class FamilyLeaderController {
 
         @PostMapping("/saveFamily-leader")
         public ResponseEntity<FamilyLeader> save(@RequestBody FamilyLeader familyLeader){
-            return ResponseEntity.ok(familyLeaderService.saveFamily(familyLeader));
+            return ResponseEntity.ok(familyLeaderService.saveInstance(familyLeader));
         }
 
         @GetMapping("/Listoffamily-Leaders")
         public ResponseEntity<List<FamilyLeader>> listall(){
-            return ResponseEntity.ok(familyLeaderService.lisatallFamilyLeaders());
+            return ResponseEntity.ok(familyLeaderService.listallInstances());
         }
 
         @DeleteMapping("/family-leader/{Id}")
         public ResponseEntity<String> remove(@PathVariable Long Id){
-            ResponseEntity.ok(familyLeaderService.removeFamilyLeader(Id) );
+            familyLeaderService.removeInstance(null);
             return ResponseEntity.ok("Family leader has been removed successfully");
         }
     }

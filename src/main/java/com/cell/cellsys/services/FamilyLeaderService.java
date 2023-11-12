@@ -5,13 +5,17 @@ import com.cell.cellsys.models.usermodels.FamilyLeader;
 
 import java.util.List;
 
-public interface FamilyLeaderService {
+public interface FamilyLeaderService{
 
-    FamilyLeader saveFamily(FamilyLeader familyLeader);
+    //Save
+    FamilyLeader saveInstance(FamilyLeader instance);
     //LIST
-    List<FamilyLeader> lisatallFamilyLeaders();
+    List<FamilyLeader> listallInstances();
     //REMOVE
-    String removeFamilyLeader(Long Id);
+    void removeInstance(FamilyLeader instance);
     //UPDATE
-    CellLeader updateFamilyLeader(FamilyLeader familyLeader);
+    FamilyLeader updateInstance(FamilyLeader instance);
+    //GETBYID
+    FamilyLeader getInstanceById(Long Id);
+
 }

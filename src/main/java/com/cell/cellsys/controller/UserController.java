@@ -1,4 +1,4 @@
-package com.cell.cellsys.contollers;
+package com.cell.cellsys.controller;
 
 import com.cell.cellsys.models.User;
 import com.cell.cellsys.models.usermodels.Pastor;
@@ -18,17 +18,17 @@ public class UserController {
 
         @PostMapping("/saveUser")
         public ResponseEntity<User> save(@RequestBody User user){
-            return ResponseEntity.ok(userService.saveUser(user));
+            return ResponseEntity.ok(userService.saveInstance(user));
         }
 
         @GetMapping("/Listofusers")
         public ResponseEntity<List<User>> listall(){
-            return ResponseEntity.ok(userService.listallUsers());
+            return ResponseEntity.ok(userService.listallInstances());
         }
 
         @DeleteMapping("/user/{Id}")
         public ResponseEntity<String> remove(@PathVariable Long Id){
-            ResponseEntity.ok(userService.removeUser(Id) );
+           userService.removeInstance(null);
             return ResponseEntity.ok("User  has been removed successfully");
         }
     }

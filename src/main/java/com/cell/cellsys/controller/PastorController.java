@@ -1,4 +1,4 @@
-package com.cell.cellsys.contollers;
+package com.cell.cellsys.controller;
 
 import com.cell.cellsys.models.usermodels.FamilyLeader;
 import com.cell.cellsys.models.usermodels.Pastor;
@@ -19,17 +19,17 @@ public class PastorController {
 
     @PostMapping("/savePastor")
     public ResponseEntity<Pastor> save(@RequestBody Pastor pastor){
-        return ResponseEntity.ok(pastorService.savePastor(pastor));
+        return ResponseEntity.ok(pastorService.saveInstance(pastor));
     }
 
     @GetMapping("/Listofpastors")
     public ResponseEntity<List<Pastor>> listall(){
-        return ResponseEntity.ok(pastorService.listallpastors());
+        return ResponseEntity.ok(pastorService.listallInstances());
     }
 
     @DeleteMapping("/pastor/{Id}")
     public ResponseEntity<String> remove(@PathVariable Long Id){
-        ResponseEntity.ok(pastorService.removePastor(Id) );
+        ResponseEntity.ok(pastorService.saveInstance(null) );
         return ResponseEntity.ok("Pastor  has been removed successfully");
     }
 }
